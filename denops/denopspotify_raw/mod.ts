@@ -1,4 +1,4 @@
-import { Denops } from "https://deno.land/x/denops@v0.5/denops.ts";
+import { Denops } from "https://deno.land/x/denops@v0.7/denops.ts";
 
 Denops.start(async function (denops: Denops): Promise<void> {
     denops.extendDispatcher({
@@ -66,15 +66,15 @@ Denops.start(async function (denops: Denops): Promise<void> {
         },
     });
 
-    await denops.command(
+    await denops.cmd(
         `command! DenopSpotifyEcho echo denops#request("${denops.name}", "echo", ["This is hello world message"])`,
     );
 
-    await denops.command(
+    await denops.cmd(
         `command! DenopSpotifyPlay call denops#notify("${denops.name}", "play", ["Denops"])`,
     );
 
-    await denops.command(
+    await denops.cmd(
         `command! DenopSpotifyPause call denops#notify("${denops.name}", "pause", ["Denops"])`,
     );
 
